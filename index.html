@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
 
 <head>
     <meta charset="UTF-8">
-    <title>Firebase Chatroom</title>
+    <title>Firebase Messenger</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h3>Firebase Chatroom</h3>
+            <h3>Firebase Messenger</h3>
             <div>
                 Username:
                 <span class="username"></span>
@@ -34,9 +34,7 @@
             </form>
         </div>
     </div>
-
-    
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -50,7 +48,6 @@
         };
         firebase.initializeApp(config);
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/firebase.js"></script>
 

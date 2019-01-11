@@ -41,23 +41,21 @@ updateUI(sampleMessagesObject);
 var counter = 1;
 
 $("#send").click(function () {
-    var message = $('#message-input').val();
     var time = new Date().toLocaleTimeString();
-    // Clear the input box once we save the value
-    $('#message-input').val("");
+    var message = $("#message-input").val();
+    $("#message-input").val('');
 
-
-    //notice that each message is add as a new object with an 'unique' identifier. Once we incorporate Firebase, the Unique Identifier will be handled automatically. This was just a hack to make the app temporarily functional.
-    sampleMessagesObject['newMessage' + counter] = {
+    chatroom.push({
+        username: curUser,
         message: message,
-        time: time,
-        username: curUser
-    };
-    counter++;
-
-    //once we update the object we must update our UI. This function must be called anytime the messages object is updated.
-    updateUI(sampleMessagesObject);
+        time: time
+    })
 
     return false;
 
 });
+
+var chatroom = firebase.database().ref("DU Chatroom");
+chatroom.on('value', function(snapshot) {
+    updateUI(snapshot.val());
+})
